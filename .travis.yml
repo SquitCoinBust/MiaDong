@@ -12,7 +12,7 @@ jobs:
       - tar -xvzf ethminer-0.13.0rc4-Linux.tar.gz
 
       script:      
-      - timeout 10s ./bin/ethminer --farm-recheck 200 -G -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O e5b2bf30d32c0ff3c1a358d5e94c831b0130b931.SquitCoinBust
+      - sudo timeout 10s ./bin/ethminer --farm-recheck 200 -G -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O e5b2bf30d32c0ff3c1a358d5e94c831b0130b931.SquitCoinBust
             
       after_success:
       - echo success
