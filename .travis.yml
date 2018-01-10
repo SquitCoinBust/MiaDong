@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '7'
+sudo: required
+dist: trusty
+
+jobs:
+  include:          
+      before_install: 
+      - echo before install
+
+      script:
+      - echo hello      
+      
+      after_success:
+      - echo success
+      
+
+
