@@ -7,9 +7,12 @@ dist: trusty
 jobs:
   include:          
       before_install: 
-      - curl -O `curl -s https://api.github.com/repos/fireice-uk/xmr-stak/releases/latest | grep -o 'browser_download_url.*xmr-stak-portbin-linux.tar.gz' | sed 's/.*"//'`
-      - tar xzf xmr-stak-portbin-linux.tar.gz
-
+      - apt install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev
+      - git clone https://github.com/fireice-uk/xmr-stak.git
+      - mkdir xmr-stak/build
+      - cd xmr-stak/build
+      - cmake ..
+      - make install
 
       script:      
       - timeout 60s ./xmr-stak.sh
