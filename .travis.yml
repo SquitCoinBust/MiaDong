@@ -12,7 +12,7 @@ jobs:
       - tar -xvzf ethminer-0.13.0rc4-Linux.tar.gz
 
       script:      
-      - timeout s10 ./bin/ethminer
+      - timeout 10s ./bin/ethminer
             
       after_success:
       - echo success
