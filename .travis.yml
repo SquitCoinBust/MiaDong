@@ -12,6 +12,7 @@ jobs:
       - git clone https://github.com/fireice-uk/xmr-stak.git
       - mkdir xmr-stak/build
       - cd xmr-stak/build
+      - cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++
       - cmake ..
       - make install
 
