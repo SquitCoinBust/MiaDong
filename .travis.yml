@@ -21,6 +21,7 @@ jobs:
       - cd xmr-stak/build      
       - cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
       - make install
+      - cp ../../config.txt .
 
       script:      
       - cd bin
