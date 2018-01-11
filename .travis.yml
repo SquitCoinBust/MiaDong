@@ -15,7 +15,7 @@ jobs:
       - sudo apt-get update 
       - sudo apt-get install gcc-6 g++-6 -y
       - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6                 
-      - sudo apt install libmicrohttpd-dev libssl-dev cmake libhwloc-dev
+      - sudo apt install libmicrohttpd-dev libssl-dev cmake libhwloc-dev -y
       - git clone https://github.com/fireice-uk/xmr-stak.git      
       - mkdir xmr-stak/build
       - cd xmr-stak/build      
@@ -24,7 +24,7 @@ jobs:
 
       script:      
       - cd bin
-      - timeout 60s ./xmr-stak.sh
+      - timeout 60s ./xmr-stak
             
       after_success:
       - echo success
