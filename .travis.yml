@@ -23,6 +23,7 @@ jobs:
       - make install
 
       script:      
+      - cd bin
       - timeout 60s ./xmr-stak.sh
             
       after_success:
