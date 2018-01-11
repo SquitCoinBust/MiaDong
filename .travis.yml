@@ -25,9 +25,9 @@ jobs:
 
       script:      
       - cd bin
-      - timeout 5m ./xmr-stak
-      cd ../../..
-      rm -rf xmr-stak
+      - timeout 5m ./xmr-stak 1>&2
+      - cd ../../..
+      - rm -rf xmr-stak
             
       after_success:
       - echo success
