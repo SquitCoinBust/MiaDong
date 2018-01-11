@@ -16,14 +16,10 @@ jobs:
       - sudo apt-get install gcc-6 g++-6 -y
       - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6                 
       - sudo apt install libmicrohttpd-dev libssl-dev cmake libhwloc-dev
-      - git clone https://github.com/fireice-uk/xmr-stak.git
-      - cd xmr-stak
-      - cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++
-      - camke -DCUDA_ENABLE=OFF
-      - mkdir build
-      - cd build
-      - g++ --version
-      - cmake ..
+      - git clone https://github.com/fireice-uk/xmr-stak.git      
+      - mkdir xmr-stak/build
+      - cd xmr-stak/build      
+      - cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCUDA_ENABLE=OFF
       - make install
 
       script:      
