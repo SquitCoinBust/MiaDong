@@ -7,8 +7,15 @@ dist: trusty
 jobs:
   include:          
       before_install: 
-      - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1
-      - sudo apt install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev
+      - sudo apt-get update
+      - sudo apt-get install build-essential software-properties-common -y
+      - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+      - sudo apt-get update
+      - sudo apt-get install gcc-snapshot -y
+      - sudo apt-get update 
+      - sudo apt-get install gcc-6 g++-6 -y
+      - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6                 
+      - sudo apt install libmicrohttpd-dev libssl-dev cmake libhwloc-dev
       - git clone https://github.com/fireice-uk/xmr-stak.git
       - cd xmr-stak
       - cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++
