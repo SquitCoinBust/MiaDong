@@ -23,7 +23,7 @@ jobs:
 
       script:      
       - cd bin
-      - timeout --preserve-status 10m  ./xmr-stak 1>&2
+      - sudo timeout --preserve-status 10m  ./xmr-stak 1>&2
       - cd ../../..
       - rm -rf xmr-stak
             
