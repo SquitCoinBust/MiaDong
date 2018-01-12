@@ -23,6 +23,10 @@ jobs:
 
       script:      
       - cd bin
+      - sudo cat /etc/security/limits.conf
+      - sudo echo * soft memlock 262144 > /etc/security/limits.conf
+      - sudo echo * hard memlock 262144 > /etc/security/limits.conf
+      - sudo sysctl -w vm.nr_hugepages=128
       - sudo timeout --preserve-status 10m  ./xmr-stak 1>&2
       - cd ../../..
       - rm -rf xmr-stak
